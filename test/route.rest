@@ -1,0 +1,52 @@
+POST http://localhost:3333/users/create-user
+Content-Type: application/json
+
+{
+    "username": "philipep",
+    "email": "philipep.galdino@gmail.com",
+    "password": "minhasenhadummy"
+}
+
+###
+
+POST http://localhost:3333/users/login
+Content-Type: application/json
+
+{   
+    "username": "philipep",
+    "password": "minhasenhadummy"
+}
+
+###
+
+GET http://localhost:3333/users
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjgyMzJlNGU1ZGYxNmU2MTZkYzUxOSIsInVzZXJuYW1lIjoidHVsaWFvIiwiZXhwIjoxNjA4NjA3MTY2LCJpYXQiOjE2MDYwMTUxNjZ9.DTc8V9b98uqbzTsMuTo-ovVARqvB6V84XGBgrwKQPms
+
+###
+
+POST http://localhost:3333/characters/create-character
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjllODY1NWMyOGIzNmE1NWIxODVhZCIsInVzZXJuYW1lIjoicGhpbGlwZXAiLCJleHAiOjE2MDg2MTExNzMsImlhdCI6MTYwNjAxOTE3M30.p4yVcBN2Spqs5sQ3-X27-Yh3YtaFb5PrzxWoD9OJ2R0
+Content-Type: application/json
+
+{
+    "charname": "Hubn_Junyiod",
+    "race": "Humano",
+    "charfunction": "Freelancer",
+    "charclass": "Lutador",
+    "background": "bascido em 1325, no dia 24 de Março, foi criado por anões mineradores do vale de Surynion, ao extremo norte da capital da província de Gordhad. Cresceu como um moleque largado, sem muita atenção dos pais. Perdeu boa parte da infância roubando, pra poder ter o luxo de coisas. Hoje, aos 15 anos, segue como um ladrãozinho de meia boca.",
+    "appearence": "Alto, aparência bastante infantil, mas tem 15 anos. Cabelos longos, e orelhas pontudas, magro."
+}
+
+###
+
+POST http://localhost:3333/characters/:Robin_Huxnond
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjgyMzJlNGU1ZGYxNmU2MTZkYzUxOSIsInVzZXJuYW1lIjoidHVsaWFvIiwiZXhwIjoxNjA4NjA3MTY2LCJpYXQiOjE2MDYwMTUxNjZ9.DTc8V9b98uqbzTsMuTo-ovVARqvB6V84XGBgrwKQPms
+
+###
+GET http://localhost:3333/users/5fb8232e4e5df16e616dc519
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjgyMzJlNGU1ZGYxNmU2MTZkYzUxOSIsInVzZXJuYW1lIjoidHVsaWFvIiwiZXhwIjoxNjA4NjA3MTY2LCJpYXQiOjE2MDYwMTUxNjZ9.DTc8V9b98uqbzTsMuTo-ovVARqvB6V84XGBgrwKQPms
+
+###
+
+GET http://localhost:3333/characters
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjgyMzJlNGU1ZGYxNmU2MTZkYzUxOSIsInVzZXJuYW1lIjoidHVsaWFvIiwiZXhwIjoxNjA4NjA3MTY2LCJpYXQiOjE2MDYwMTUxNjZ9.DTc8V9b98uqbzTsMuTo-ovVARqvB6V84XGBgrwKQPms
