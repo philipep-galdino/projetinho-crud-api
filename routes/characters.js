@@ -9,7 +9,7 @@ const characterController = new CharacterController()
 
 router.param('charname', function(request, response, next, charname) {
     Character.findOne({ charname: charname }).then(function(character) {
-        if(!character) return response.sendStatus(404)
+        if(!character) return response.status(404).json({ message: 'Não foi possível encontrar um personagem com este nome!'})
 
         request.character = character
 
@@ -18,7 +18,7 @@ router.param('charname', function(request, response, next, charname) {
 })
 
 router.get('/', auth.required, characterController.index)
-router.get('/:charname', auth.required, characterController.show)
+router.get('/:charname', auth.optional, characterController.show)
 router.post('/create-character', auth.required, characterController.create)
 // router.post('/update-character', characterController.update)
 

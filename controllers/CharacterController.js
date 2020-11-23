@@ -14,11 +14,14 @@ export default class CharacterController {
     }
 
     async show (request, response) {
-        const { charname } = request.params
-
-        const character = await Character.find(charname)
-
-        return response.json(character)
+        Promise.all([
+            request.payload ? User.findById(request.payload.id) : null,
+            request.character.populate('owner').execPopulate()
+        ]).then(function(results) {
+            const user = results[0]
+            
+            return response.json({ character: request.character.JSONfy(user)})
+        })
     }
 
     async create (request, response, next) {
