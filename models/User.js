@@ -24,8 +24,14 @@ const userSchema = new mongoose.Schema({
     },
 
     characters: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Character'
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Character'
     }],
+
+    createdDate: {
+        type: Date,
+        default: Date.now
+    },
 
     hash:String,
     passToken: String

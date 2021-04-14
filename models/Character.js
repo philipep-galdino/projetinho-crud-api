@@ -47,7 +47,12 @@ const characterSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
 
-    inventary: [{ type: String }]
+    createdDate: {
+        type: Date,
+        default: Date.now
+    },
+
+    inventory: [{ type: String }]
 })
 
 characterSchema.plugin(uniqueValidator, {message: 'já está em uso.'})
